@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mappers</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href=/MappersFavIcon.ico rel="icon" sizes="32x32" type="image/png" />
+</head>
+<body>
+
+
+
+    <div class="container">
+
+        <header class="text-center">
+            <img src="~/images/TransparentBackground.png" width="400" />
+        </header>
+
+
+
+        <section>
+            <div class="row text-center">
+
+                <div class="col-3">
+                    <link /><a href="/home/index">Home</a>
+                </div>
+
+                <div class="col-3">
+                    <link /><a href="/home/About">About</a>
+                </div>
+
+                <div class="col-3">
+                    <link /><a href="#">Message</a>
+                </div>
+
+                <div class="col-3">
+                    <ul class="nav navbar-nav" style="margin:0 0 0 81px;">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" style="padding: 0 15px;" data-toggle="dropdown" href="#">
+                                Menu
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/home/Profile">Profile</a></li>
+                                <li><a href="/home/WeGotOrders">We got Orders!</a></li>
+                                <li><a href="/home/FavoriteBases">Favorite Bases</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h1 class="text-center">
+                <img src="/images/2019-12-22 (6).png" style="width:100%" />
+            </h1>
+
+            <div class="row">
+                @RenderBody()
+            </div>
+        </section>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
