@@ -45,7 +45,7 @@ namespace Group.Controllers
 
       
         // GET: Mappers/Create
-        public IActionResult Profile()
+        public IActionResult Register()
         {
             return View();
         }

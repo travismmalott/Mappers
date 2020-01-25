@@ -24,7 +24,7 @@ namespace Group.Controllers
             [HttpPost]
             public IActionResult Index(string iEmail, string iPassword)
             {             
-            return View("usaoverview");
+            return View("worldoverview");
             }
 
         [HttpGet]
