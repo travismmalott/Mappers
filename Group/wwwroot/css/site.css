@@ -52,13 +52,25 @@ button.accept-policy {
 }
 
 .vl {
-    border-left: 6px solid green;
+    border-left: 6px solid ;
     height: 500px;
     position: absolute;
     left: 50%;
     margin-left: -3px;
     top: 0;
 }
+.h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 40px 0 20px;
+}
+
+    .h2 span {
+        background: #fff;
+        padding: 0 10px;
+    }
 
 /* Sticky footer styles
 -------------------------------------------------- */

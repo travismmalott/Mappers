@@ -2,67 +2,111 @@
 
 @{
     ViewData["Title"] = "Register";
-}
 
-<h1>Register</h1>
+}
+    <link href="~/css/site.css" rel="stylesheet" />
+
+
+    <h1 class="text-center">
+        <img src="~/images/2020-01-27 (3).png" style="width:100%"/>
+    </h1>
+
+
+<h2 class="h2 span"><span>Register</span></h2>
 
 
 <hr />
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-5">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="firstName" class="control-label">First Name</label>
-                <input asp-for="firstName" class="form-control" />
+                <input asp-for="firstName" class=" form-control-lg" />
                 <span asp-validation-for="firstName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="lastName" class="control-label">Last Name</label>
-                <input asp-for="lastName" class="form-control" />
-                <span asp-validation-for="lastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="password" class="control-label">Password</label>
-                <input asp-for="password" class="form-control" />
-                <span asp-validation-for="password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="phoneNumber" class="control-label">Phone Number</label>
-                <input asp-for="phoneNumber" class="form-control" />
-                <span asp-validation-for="phoneNumber" class="text-danger"></span>
-            </div>
+
+            <br />
+
             <div class="form-group">
                 <label asp-for="email" class="control-label">Email</label>
-                <input asp-for="email" class="form-control" />
+                <input asp-for="email" class="form-control-lg" />
                 <span asp-validation-for="email" class="text-danger"></span>
             </div>
+
+            <br />
+
             <div class="form-group">
-                <label asp-for="currentBase" class="control-label">Currenty Duty Station</label>
-                <input asp-for="currentBase" class="form-control" />
-                <span asp-validation-for="currentBase" class="text-danger"></span>
+                <label asp-for="phoneNumber" class="control-label">Phone Number</label>
+                <input asp-for="phoneNumber" class="form-control-lg" />
+                <span asp-validation-for="phoneNumber" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label"> 
-                 Notifications   <input class="form-check-input" asp-for="notifications" /> @*@Html.DisplayNameFor(model => model.notifications)*@
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                 Check for Public Profile
-                <input class="form-check-input" asp-for="publicOrPrivate" /> @*@Html.DisplayNameFor(model => model.publicOrPrivate)*@
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+            @*<br />
+
+
+
+
+
+
+       
+
+        <br />
+
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                Notifications   <input class="form-check-input" asp-for="notifications" /> @Html.DisplayNameFor(model => model.notifications)
+            </label>
+        </div>
+
+        <br />
+
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                Check for Public Profile
+                <input class="form-check-input" asp-for="publicOrPrivate" /> @Html.DisplayNameFor(model => model.publicOrPrivate)
+            </label>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>*@
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="col-2"></div>
+
+<div class="col-5">
+    <div class="form-group">
+        <label asp-for="lastName" class="control-label">Last Name</label>
+        <input asp-for="lastName" class="form-control-lg" />
+        <span asp-validation-for="lastName" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label asp-for="password" class="control-label">Password</label>
+        <input asp-for="password" class="form-control-lg" />
+        <span asp-validation-for="password" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <label asp-for="currentBase" class="control-label">Currenty Duty Station</label>
+        <input asp-for="currentBase" class="form-control-lg" />
+        <span asp-validation-for="currentBase" class="text-danger"></span>
+    </div>
 </div>
+
+
+       @*<a asp-action="Index">Back to List</a>*@
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
