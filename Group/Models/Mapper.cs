@@ -14,8 +14,8 @@ namespace Group.Models
         public string phoneNumber { get; set; }
         public string email { get; set; }
         public string currentBase { get; set; }
-        public bool notifications { get; set; }
-        public bool publicOrPrivate { get; set; }
+        public bool Notifications { get; set; }
+        public bool Public { get; set; }
 
     }
 }

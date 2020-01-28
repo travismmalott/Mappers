@@ -31,10 +31,10 @@
                 @Html.DisplayNameFor(model => model.currentBase)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.notifications)
+                @Html.DisplayNameFor(model => model.Notifications)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.publicOrPrivate)
+                @Html.DisplayNameFor(model => model.Public)
             </th>
             <th></th>
         </tr>
@@ -61,10 +61,10 @@
                 @Html.DisplayFor(modelItem => item.currentBase)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.notifications)
+                @Html.DisplayFor(modelItem => item.Notifications)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.publicOrPrivate)
+                @Html.DisplayFor(modelItem => item.Public)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MapperID">Edit</a> |

@@ -45,41 +45,6 @@
 
             <br />
 
-            <h2 class="text-left">Profile Network:</h2>
-
-            <br />
-
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="notifications" /> @Html.DisplayNameFor(model => model.notifications)
-                </label>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            @*<br />
-
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    Check for Public Profile
-                    <input class="form-check-input" asp-for="publicOrPrivate" /> @Html.DisplayNameFor(model => model.publicOrPrivate)
-                </label>
-            </div>
-
-            <br />
-
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>*@*@
         </form>
     </div>
 </div>
@@ -112,8 +77,40 @@
     </div>
 </div>
 
+<h2 class="text-left">Profile Network:</h2>
+
+<br />
+
+<div class="col-12">
+    <font size="2">When checking the box, you are agreeing that other Military Families can see your profile such as: your name, photos, comments, email, and/or phone.</font>
+    <p><font size="2">Otherwise, Military families will not be able to see your profile, photos, email and/ or phone.</font></p>
+    <p><font size="2">If you wish to change it, go to 'edit profile' on the main menu.</font></p>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            
+            <input class="form-check-input" asp-for="Public" /> @Html.DisplayNameFor(model => model.Public)
+        </label>
+    </div>
+</div>
+
+<br />
 
 
+<div class="col-12">
+    <font size="2">Would you like to receive notifications? Such as, other military families contacting you or comments to your recommendations.</font>
+    <p><font size="2">If you do not check the box, you are not receiving any notifications.</font></p>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="Notifications" /> @Html.DisplayNameFor(model => model.Notifications)
+        </label>
+    </div>
+</div>
+
+    <br />
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
 
 
 @*<a asp-action="Index">Back to List</a>*@
