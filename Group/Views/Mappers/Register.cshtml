@@ -4,12 +4,12 @@
     ViewData["Title"] = "Register";
 
 }
-    <link href="~/css/site.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
 
 
-    <h1 class="text-center">
-        <img src="~/images/2020-01-27 (3).png" style="width:100%"/>
-    </h1>
+<h1 class="text-center">
+    <img src="~/images/2020-01-27 (3).png" style="width:100%" />
+</h1>
 
 
 <h2 class="h2 span"><span>Register</span></h2>
@@ -18,7 +18,7 @@
 <hr />
 
 <div class="row">
-    <div class="col-5">
+    <div class="col-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -43,37 +43,43 @@
                 <span asp-validation-for="phoneNumber" class="text-danger"></span>
             </div>
 
+            <br />
+
+            <h2 class="text-left">Profile Network:</h2>
+
+            <br />
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="notifications" /> @Html.DisplayNameFor(model => model.notifications)
+                </label>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
             @*<br />
 
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    Check for Public Profile
+                    <input class="form-check-input" asp-for="publicOrPrivate" /> @Html.DisplayNameFor(model => model.publicOrPrivate)
+                </label>
+            </div>
 
+            <br />
 
-
-
-
-       
-
-        <br />
-
-        <div class="form-group form-check">
-            <label class="form-check-label">
-                Notifications   <input class="form-check-input" asp-for="notifications" /> @Html.DisplayNameFor(model => model.notifications)
-            </label>
-        </div>
-
-        <br />
-
-        <div class="form-group form-check">
-            <label class="form-check-label">
-                Check for Public Profile
-                <input class="form-check-input" asp-for="publicOrPrivate" /> @Html.DisplayNameFor(model => model.publicOrPrivate)
-            </label>
-        </div>
-
-        <br />
-
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary" />
-        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>*@*@
         </form>
     </div>
 </div>
@@ -83,6 +89,7 @@
 <div class="col-5">
     <div class="form-group">
         <label asp-for="lastName" class="control-label">Last Name</label>
+        <br />
         <input asp-for="lastName" class="form-control-lg" />
         <span asp-validation-for="lastName" class="text-danger"></span>
     </div>
@@ -91,6 +98,7 @@
 
     <div class="form-group">
         <label asp-for="password" class="control-label">Password</label>
+        <br />
         <input asp-for="password" class="form-control-lg" />
         <span asp-validation-for="password" class="text-danger"></span>
     </div>
@@ -105,7 +113,10 @@
 </div>
 
 
-       @*<a asp-action="Index">Back to List</a>*@
+
+
+
+@*<a asp-action="Index">Back to List</a>*@
 
 
 @section Scripts {
