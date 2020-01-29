@@ -40,4 +40,12 @@
     <Folder Include="wwwroot\images\images for home page\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="wwwroot\images\2019-12-11 %283%29.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
