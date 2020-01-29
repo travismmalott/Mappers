@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Group.Data;
 using Group.Models;
 
-namespace Group.Controllers
+namespace Mappers.Controllers
 {
     public class BasesController : Controller
     {
@@ -20,9 +20,15 @@ namespace Group.Controllers
         }
 
         // GET: Bases
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Bases.ToListAsync());
+        public IActionResult Index()
+        {   //expresses interest in the Bases table from Database 
+            var dbsetpropertyBases = _context.Bases;
+            //joins the results to another subset of results with a join
+            var dbsetpropertyBasesBranches = dbsetpropertyBases.Include(x => x.Branch);
+            //actually processes the select statement and the join and pulls data from database
+            var model = dbsetpropertyBasesBranches.ToList();
+            
+            return View( model );
         }
 
         // GET: Bases/Details/5
@@ -46,6 +52,14 @@ namespace Group.Controllers
         // GET: Bases/Create
         public IActionResult Create()
         {
+            var branches = _context.
+                Branches
+                .Select(x =>
+                new SelectListItem(x.Name, x.BranchID.ToString()))
+            .ToList();
+
+            ViewBag.Branches = branches;
+
             return View();
         }
 
@@ -54,8 +68,16 @@ namespace Group.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BaseID,City,State,BaseName")] Base @base)
+        public async Task<IActionResult> Create([Bind("BaseID,City,State,BaseName,Longitude,Latitude")] Base @base, int branchID)
         {
+            
+            //use the BranchID to find the branch object using the _context
+            var branch = _context
+                .Branches
+                .SingleOrDefault(x => x.BranchID == branchID);
+            //attach existing branch to the new base
+            @base.Branch = branch;
+
             if (ModelState.IsValid)
             {
                 _context.Add(@base);
@@ -86,7 +108,7 @@ namespace Group.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BaseID,City,State,BaseName")] Base @base)
+        public async Task<IActionResult> Edit(int id, [Bind("BaseID,City,State,BaseName,Longitude,Latitude")] Base @base)
         {
             if (id != @base.BaseID)
             {
