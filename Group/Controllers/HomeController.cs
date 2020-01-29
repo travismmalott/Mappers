@@ -14,7 +14,11 @@ namespace Group.Controllers
 {
     public class HomeController : Controller
     {
-        
+
+            public ActionResult Privacy()
+            {
+                return View();
+            }
             public ActionResult Index()
             {
                 //select
