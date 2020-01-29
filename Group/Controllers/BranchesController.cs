@@ -6,26 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Group.Data;
-using Group.Models;
+using Mappers.Models;
 
-namespace Group.Controllers
+namespace Mappers.Controllers
 {
-    public class MappersController : Controller
+    public class BranchesController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MappersController(ApplicationDbContext context)
+        public BranchesController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Mappers
+        // GET: Branches
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Mappers.ToListAsync());
+            return View(await _context.Branches.ToListAsync());
         }
 
-        // GET: Mappers/Details/5
+        // GET: Branches/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,40 +33,39 @@ namespace Group.Controllers
                 return NotFound();
             }
 
-            var mapper = await _context.Mappers
-                .FirstOrDefaultAsync(m => m.MapperID == id);
-            if (mapper == null)
+            var branch = await _context.Branches
+                .FirstOrDefaultAsync(m => m.BranchID == id);
+            if (branch == null)
             {
                 return NotFound();
             }
 
-            return View(mapper);
+            return View(branch);
         }
 
-      
-        // GET: Mappers/Create
-        public IActionResult Register()
+        // GET: Branches/Create
+        public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Mappers/Create
+        // POST: Branches/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("firstName,lastName,password,phoneNumber,email,currentBase,notifications,publicOrPrivate")] Mapper mapper)
+        public async Task<IActionResult> Create([Bind("BranchID,Name")] Branch branch)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(mapper);
+                _context.Add(branch);
                 await _context.SaveChangesAsync();
-                return View("worldoverview"); 
+                return RedirectToAction(nameof(Index));
             }
-            return View(mapper);
+            return View(branch);
         }
 
-        // GET: Mappers/Edit/5
+        // GET: Branches/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +73,22 @@ namespace Group.Controllers
                 return NotFound();
             }
 
-            var mapper = await _context.Mappers.FindAsync(id);
-            if (mapper == null)
+            var branch = await _context.Branches.FindAsync(id);
+            if (branch == null)
             {
                 return NotFound();
             }
-            return View(mapper);
+            return View(branch);
         }
 
-        // POST: Mappers/Edit/5
+        // POST: Branches/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MapperID,firstName,lastName,password,phoneNumber,email,currentBase,notifications,publicOrPrivate")] Mapper mapper)
+        public async Task<IActionResult> Edit(int id, [Bind("BranchID,Name")] Branch branch)
         {
-            if (id != mapper.MapperID)
+            if (id != branch.BranchID)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace Group.Controllers
             {
                 try
                 {
-                    _context.Update(mapper);
+                    _context.Update(branch);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapperExists(mapper.MapperID))
+                    if (!BranchExists(branch.BranchID))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace Group.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(mapper);
+            return View(branch);
         }
 
-        // GET: Mappers/Delete/5
+        // GET: Branches/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,30 +124,30 @@ namespace Group.Controllers
                 return NotFound();
             }
 
-            var mapper = await _context.Mappers
-                .FirstOrDefaultAsync(m => m.MapperID == id);
-            if (mapper == null)
+            var branch = await _context.Branches
+                .FirstOrDefaultAsync(m => m.BranchID == id);
+            if (branch == null)
             {
                 return NotFound();
             }
 
-            return View(mapper);
+            return View(branch);
         }
 
-        // POST: Mappers/Delete/5
+        // POST: Branches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var mapper = await _context.Mappers.FindAsync(id);
-            _context.Mappers.Remove(mapper);
+            var branch = await _context.Branches.FindAsync(id);
+            _context.Branches.Remove(branch);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapperExists(int id)
+        private bool BranchExists(int id)
         {
-            return _context.Mappers.Any(e => e.MapperID == id);
+            return _context.Branches.Any(e => e.BranchID == id);
         }
     }
 }

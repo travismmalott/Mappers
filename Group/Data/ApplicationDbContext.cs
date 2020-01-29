@@ -4,10 +4,12 @@ using System.Text;
 using Group.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Mappers.Models;
+
 
 namespace Group.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<Mapper>
     {
         public DbSet<Mapper> Mappers { get; set; }
         public DbSet<Photo> Photos { get; set; }
@@ -19,5 +21,7 @@ namespace Group.Data
             : base(options)
         {
         }
+
+        public DbSet<Mappers.Models.Branch> Branches { get; set; }
     }
 }
