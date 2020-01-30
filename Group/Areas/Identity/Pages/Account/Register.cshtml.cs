@@ -20,14 +20,14 @@ namespace Mappers.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<Mapper> _signInManager;
+        private readonly UserManager<Mapper> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<Mapper> userManager,
+            SignInManager<Mapper> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -63,7 +63,23 @@ namespace Mappers.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
             [DataType(DataType.MultilineText)]
             [Display(Name = "First Name")]
-            public string firstName { get; set; }
+            public string FirstName { get; set; }
+            
+            [DataType(DataType.MultilineText)]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [DataType(DataType.MultilineText)]
+            [Display(Name = "Current Base")]
+            public string currentBase { get; set; } 
+
+            [DataType(DataType.MultilineText)] 
+            [Display(Name = "Public")] 
+            public bool PublicProfile { get; set; }
+
+            [DataType(DataType.MultilineText)]
+            [Display(Name = "Notifications")]
+            public bool Notifications { get; set; }
 
         }
 
@@ -79,7 +95,7 @@ namespace Mappers.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Mapper { UserName = Input.Email, Email = Input.Email, firstName = Input.firstName   };
+                var user = new Mapper { UserName = Input.Email, Email = Input.Email, firstName = Input.FirstName   };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
