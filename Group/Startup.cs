@@ -1,4 +1,4 @@
-//Brandon
+//Fearless leader leads the way
 //WHO DOES NUMBER TWO WORK FORRR?
 //Hello yellow, the one and only Lola Coka Cola :3
 //Howdy do how are you?
