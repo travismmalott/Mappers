@@ -1,4 +1,4 @@
-//Fearless leader leads the way
+//Fearless leader rules the land
 //WHO DOES NUMBER TWO WORK FORRR?
 //Hello yellow, the one and only Lola Coka Cola :3 Lola is my spirit animal <3 Which means Ana is my master. 
 using System;
