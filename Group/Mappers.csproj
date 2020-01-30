@@ -7,26 +7,12 @@
     <RootNamespace>Mappers</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Data\Migrations\20200122195727_init.cs" />
-    <Compile Remove="Data\Migrations\20200122195727_init.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200128210351_init.cs" />
-    <Compile Remove="Data\Migrations\20200128210351_init.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200129160642_third.cs" />
-    <Compile Remove="Data\Migrations\20200129160642_third.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200129165428_init.cs" />
-    <Compile Remove="Data\Migrations\20200129165428_init.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200129165506_init.cs" />
-    <Compile Remove="Data\Migrations\20200129165506_init.Designer.cs" />
-    <Compile Remove="Data\Migrations\20200129165935_init.cs" />
-    <Compile Remove="Data\Migrations\20200129165935_init.Designer.cs" />
-  </ItemGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1" />

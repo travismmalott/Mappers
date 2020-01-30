@@ -5,7 +5,7 @@ using Group.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Mappers.Models;
-
+using Mappers.Model;
 
 namespace Group.Data
 {
@@ -16,6 +16,7 @@ namespace Group.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Base> Bases { get; set; }
         public DbSet<State> States { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
