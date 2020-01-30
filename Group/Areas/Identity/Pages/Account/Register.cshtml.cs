@@ -95,7 +95,7 @@ namespace Mappers.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new Mapper { UserName = Input.Email, Email = Input.Email, firstName = Input.FirstName   };
+                var user = new Mapper {UserName = Input.Email, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName, CurrentBase = Input.currentBase, Notifications = Input.Notifications, PublicProfile = Input.PublicProfile   };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

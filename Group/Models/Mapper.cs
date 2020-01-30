@@ -9,10 +9,10 @@ namespace Group.Models
     public class Mapper : IdentityUser
     {
         public int MapperID { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }       
-           
-        public string currentBase { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }        
+
+        public string CurrentBase { get; set; }
         public bool Notifications { get; set; }
         public bool PublicProfile { get; set; }
 
