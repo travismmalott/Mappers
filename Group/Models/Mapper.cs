@@ -14,7 +14,7 @@ namespace Group.Models
            
         public string currentBase { get; set; }
         public bool Notifications { get; set; }
-        public bool Public { get; set; }
+        public bool PublicProfile { get; set; }
 
     }
 }
