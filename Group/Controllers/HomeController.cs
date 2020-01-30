@@ -30,6 +30,7 @@ namespace Group.Controllers
 
         }
 
+
         public ActionResult usaoverview()
         {
             return View();
@@ -56,11 +57,10 @@ namespace Group.Controllers
             return View("About");
         }
 
-        [ActionName("Profile")]
         public ActionResult MyProfile()
         {
             //select
-            return View("Profile");
+            return View("MyProfile");
 
         }
 
