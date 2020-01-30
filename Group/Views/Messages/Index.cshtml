@@ -5,9 +5,16 @@
 
 <h1>Messaging</h1>
 
+<div class="container">
+    <ul id="messages">
+    </ul>
 
+    <input id="text" />
 
-
+    <button id="send">
+        Send Message
+    </button>
+</div>
 @section Scripts{
 
     <script>
@@ -16,7 +23,7 @@
             //clear the list, get all messages, add messages to list
 
             $.ajax({
-                url: '/api/messages',
+                url: '/api/MessageService',
                 type: 'get'
             }).done(function (data) {
                 $('#messages').html('');
@@ -30,7 +37,7 @@
         $('#send').click(function () {
 
             $.ajax({
-                url: '/api/messages',
+                url: '/api/MessageService',
                 type: 'post',
                 data: JSON.stringify({ text: $('#text').val() }),
                 contentType: "application/json"
