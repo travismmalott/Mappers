@@ -7,6 +7,21 @@ namespace Group.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "CurrentBase",
+                table: "AspNetUsers",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "FirstName",
+                table: "AspNetUsers",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "LastName",
+                table: "AspNetUsers",
+                nullable: true);
+
             migrationBuilder.AddColumn<int>(
                 name: "MapperID",
                 table: "AspNetUsers",
@@ -20,25 +35,10 @@ namespace Group.Data.Migrations
                 defaultValue: false);
 
             migrationBuilder.AddColumn<bool>(
-                name: "Public",
+                name: "PublicProfile",
                 table: "AspNetUsers",
                 nullable: false,
                 defaultValue: false);
-
-            migrationBuilder.AddColumn<string>(
-                name: "currentBase",
-                table: "AspNetUsers",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "firstName",
-                table: "AspNetUsers",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "lastName",
-                table: "AspNetUsers",
-                nullable: true);
 
             migrationBuilder.CreateTable(
                 name: "Branches",
@@ -156,6 +156,18 @@ namespace Group.Data.Migrations
                 name: "Photos");
 
             migrationBuilder.DropColumn(
+                name: "CurrentBase",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "FirstName",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
+                name: "LastName",
+                table: "AspNetUsers");
+
+            migrationBuilder.DropColumn(
                 name: "MapperID",
                 table: "AspNetUsers");
 
@@ -164,19 +176,7 @@ namespace Group.Data.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "Public",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "currentBase",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "firstName",
-                table: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "lastName",
+                name: "PublicProfile",
                 table: "AspNetUsers");
         }
     }
