@@ -12,10 +12,13 @@ namespace Group.Models
         public string City { get; set; }
         public string State { get; set; }
         public string BaseName { get; set; }
-
-        public double Longitude { get; set; }
-        public double Latitude { get; set; }
         public Branch Branch { get; set; }
+        public ICollection<Review> Reviews { get; set; }
+
+        //Out of scope - integration of Google Maps for Base Page
+        //public double Longitude { get; set; }
+        //public double Latitude { get; set; }
+        
 
     }
 }

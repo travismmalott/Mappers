@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mappers.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace Group.Models
@@ -10,9 +11,11 @@ namespace Group.Models
     {
         public int MapperID { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }        
-
-        public string CurrentBase { get; set; }
+        public string LastName { get; set; }
+        public Branch Branch { get; set; } 
+        public Base Base { get; set; }
+        public ICollection<Review> Reviews { get; set; }
+        public ICollection<Photo> Photos { get; set; }
         public bool Notifications { get; set; }
         public bool PublicProfile { get; set; }
 

@@ -19,6 +19,20 @@ namespace Mappers.Controllers
             _context = context;
         }
 
+        public IActionResult Texas()
+        {
+            return View();
+        }
+        public IActionResult Maryland()
+        {
+            return View(); 
+        }
+        public IActionResult Washington()
+        {
+            return View();
+        }
+
+
         // GET: States
         public async Task<IActionResult> Index()
         {
@@ -54,7 +68,7 @@ namespace Mappers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StateID,Name,StateFacts")] State state)
+        public async Task<IActionResult> Create([Bind("StateID,Name")] State state)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +100,7 @@ namespace Mappers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StateID,Name,StateFacts")] State state)
+        public async Task<IActionResult> Edit(int id, [Bind("StateID,Name")] State state)
         {
             if (id != state.StateID)
             {

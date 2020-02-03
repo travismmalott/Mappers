@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Group.Data;
 using Group.Models;
+using Mappers.Model;
 
 namespace Mappers.Controllers
 {
@@ -20,15 +21,9 @@ namespace Mappers.Controllers
         }
 
         // GET: Bases
-        public IActionResult Index()
-        {   //expresses interest in the Bases table from Database 
-            var dbsetpropertyBases = _context.Bases;
-            //joins the results to another subset of results with a join
-            var dbsetpropertyBasesBranches = dbsetpropertyBases.Include(x => x.Branch);
-            //actually processes the select statement and the join and pulls data from database
-            var model = dbsetpropertyBasesBranches.ToList();
-            
-            return View( model );
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Bases.ToListAsync());
         }
 
         // GET: Bases/Details/5
@@ -52,14 +47,7 @@ namespace Mappers.Controllers
         // GET: Bases/Create
         public IActionResult Create()
         {
-            var branches = _context.
-                Branches
-                .Select(x =>
-                new SelectListItem(x.Name, x.BranchID.ToString()))
-            .ToList();
-
-            ViewBag.Branches = branches;
-
+            
             return View();
         }
 
@@ -68,16 +56,8 @@ namespace Mappers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BaseID,City,State,BaseName,Longitude,Latitude")] Base @base, int branchID)
+        public async Task<IActionResult> Create([Bind("BaseID,City,State,BaseName")] Base @base)
         {
-            
-            //use the BranchID to find the branch object using the _context
-            var branch = _context
-                .Branches
-                .SingleOrDefault(x => x.BranchID == branchID);
-            //attach existing branch to the new base
-            @base.Branch = branch;
-
             if (ModelState.IsValid)
             {
                 _context.Add(@base);
@@ -108,7 +88,7 @@ namespace Mappers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BaseID,City,State,BaseName,Longitude,Latitude")] Base @base)
+        public async Task<IActionResult> Edit(int id, [Bind("BaseID,City,State,BaseName")] Base @base)
         {
             if (id != @base.BaseID)
             {

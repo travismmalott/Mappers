@@ -35,18 +35,17 @@ namespace Mappers.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
-
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("StateID")
+                        .HasColumnType("int");
 
                     b.HasKey("BaseID");
 
                     b.HasIndex("BranchID");
+
+                    b.HasIndex("StateID");
 
                     b.ToTable("Bases");
                 });
@@ -59,11 +58,14 @@ namespace Mappers.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<int?>("BaseID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BranchID")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CurrentBase")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -123,6 +125,10 @@ namespace Mappers.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BaseID");
+
+                    b.HasIndex("BranchID");
+
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
 
@@ -141,6 +147,9 @@ namespace Mappers.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("MapperId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("MimeType")
                         .HasColumnType("nvarchar(max)");
 
@@ -152,6 +161,8 @@ namespace Mappers.Migrations
 
                     b.HasKey("PhotoID");
 
+                    b.HasIndex("MapperId");
+
                     b.ToTable("Photos");
                 });
 
@@ -162,8 +173,14 @@ namespace Mappers.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BaseID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DatePosted")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("MapperId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("locationPhotoPhotoID")
                         .HasColumnType("int");
@@ -172,6 +189,10 @@ namespace Mappers.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ReviewID");
+
+                    b.HasIndex("BaseID");
+
+                    b.HasIndex("MapperId");
 
                     b.HasIndex("locationPhotoPhotoID");
 
@@ -188,12 +209,25 @@ namespace Mappers.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StateFacts")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("StateID");
 
                     b.ToTable("States");
+                });
+
+            modelBuilder.Entity("Mappers.Model.Message", b =>
+                {
+                    b.Property<int>("MessageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MessageID");
+
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("Mappers.Models.Branch", b =>
@@ -203,27 +237,12 @@ namespace Mappers.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Branches")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BranchID");
 
                     b.ToTable("Branches");
-                });
-
-            modelBuilder.Entity("Mappers.Models.Message", b =>
-                {
-                    b.Property<int>("MessageID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Text")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MessageID");
-
-                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -366,10 +385,40 @@ namespace Mappers.Migrations
                     b.HasOne("Mappers.Models.Branch", "Branch")
                         .WithMany("Bases")
                         .HasForeignKey("BranchID");
+
+                    b.HasOne("Group.Models.State", null)
+                        .WithMany("Bases")
+                        .HasForeignKey("StateID");
+                });
+
+            modelBuilder.Entity("Group.Models.Mapper", b =>
+                {
+                    b.HasOne("Group.Models.Base", "Base")
+                        .WithMany()
+                        .HasForeignKey("BaseID");
+
+                    b.HasOne("Mappers.Models.Branch", "Branch")
+                        .WithMany()
+                        .HasForeignKey("BranchID");
+                });
+
+            modelBuilder.Entity("Group.Models.Photo", b =>
+                {
+                    b.HasOne("Group.Models.Mapper", null)
+                        .WithMany("Photos")
+                        .HasForeignKey("MapperId");
                 });
 
             modelBuilder.Entity("Group.Models.Review", b =>
                 {
+                    b.HasOne("Group.Models.Base", "Base")
+                        .WithMany("Reviews")
+                        .HasForeignKey("BaseID");
+
+                    b.HasOne("Group.Models.Mapper", "Mapper")
+                        .WithMany("Reviews")
+                        .HasForeignKey("MapperId");
+
                     b.HasOne("Group.Models.Photo", "locationPhoto")
                         .WithMany()
                         .HasForeignKey("locationPhotoPhotoID");

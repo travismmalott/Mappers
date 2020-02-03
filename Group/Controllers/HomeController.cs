@@ -30,8 +30,8 @@ namespace Group.Controllers
 
         }
 
-
-        public ActionResult usaoverview()
+         
+        public ActionResult UsaOverView()
         {
             return View();
         }
@@ -44,10 +44,19 @@ namespace Group.Controllers
             return View();
         }
 
+        public ActionResult USAoverview()
+        {
+            return View();
+        }
+
+        public ActionResult Texas()
+        {
+            return View();
+        }
         //[HttpPost]
         //public IActionResult Index(string iEmail, string iPassword)
         //{
-        //    return View("worldoverview");
+        //    return View("usaoverview");
         //}
 
         [HttpGet]

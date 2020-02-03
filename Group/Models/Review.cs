@@ -11,5 +11,7 @@ namespace Group.Models
         public string reviewContent { get; set; }
         public DateTime DatePosted { get; set; }
         public Photo locationPhoto { get; set; }
+        public Base Base { get; set; }
+        public Mapper Mapper { get; set; }
     }
 }

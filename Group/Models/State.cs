@@ -8,8 +8,9 @@ namespace Group.Models
     public class State
     {
         public int StateID { get; set; }
-        public string Name { get; set; }
-        public string StateFacts { get; set; }
+        public string Name { get; set; }      
+        public ICollection<Base> Bases { get; set; }
+        
 
     }
 }
