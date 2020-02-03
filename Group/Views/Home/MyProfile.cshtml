@@ -7,16 +7,21 @@
 <h2 class="h2 span"><span>Profile</span></h2>
 
 <div class="text-left">
-    <style>
-        #file {
-            display: none;
-        }
-    </style>
 
     <div class="frame">
         <label for="file">
-            <img src="~/images/profile image2.jpg" style="width:100%; height:100%"  />
+            <input type="file" id="file" name="file" accept="image/*" onchange="loadFile(event)" style="opacity:0;">
+            <img id="output" style="width:100%; height:100%" />
         </label>
-        <input type="file" id="file" name="file" />
+        <script>
+            var loadFile = function (event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var output = document.getElementById('output');
+                    output.src = reader.result;
+                };
+                reader.readAsDataURL(event.target.files[0]);
+            };
+        </script>
     </div>
 </div>
