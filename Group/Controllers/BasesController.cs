@@ -47,8 +47,25 @@ namespace Mappers.Controllers
         // GET: Bases/Create
         public IActionResult Create()
         {
+            //Get branches for dropdown menu
+            var branches = _context.
+               Branches
+               .Select(x =>
+               new SelectListItem(x.Branches, x.BranchID.ToString()))
+           .ToList();
+            //Get states for dropdown menu
+            var states = _context.
+              States
+               .Select(x =>
+               new SelectListItem(x.Name, x.StateID.ToString()))
+           .ToList();
             
+
+            //Creates ViewBags for dropdowns to access
+            ViewBag.States = states;            
+            ViewBag.Branches = branches;
             return View();
+
         }
 
         // POST: Bases/Create
@@ -56,11 +73,32 @@ namespace Mappers.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BaseID,City,State,BaseName")] Base @base)
+        public async Task<IActionResult> Create([Bind("BaseID,City,BaseName")] Base @base, int branchID, int stateID)
         {
+            var branch = _context
+             .Branches
+             .SingleOrDefault(x => x.BranchID == branchID);
+            //this attaches existing Branch to the new Base
+            @base.Branch = branch;
+
+            var state = _context
+             .States
+             .SingleOrDefault(x => x.StateID == stateID);
+            //this attaches existing State to the new Base
+            @base.State = state;
+            //adds StateName to Base in database
+            @base.StateName = state.Name;
+
+
+
+        
+
             if (ModelState.IsValid)
             {
+                
                 _context.Add(@base);
+                branch.Bases.Add(@base);
+                state.Bases.Add(@base);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

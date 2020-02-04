@@ -88,10 +88,10 @@ namespace Mappers.Migrations
                     BaseID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     City = table.Column<string>(nullable: true),
-                    State = table.Column<string>(nullable: true),
                     BaseName = table.Column<string>(nullable: true),
-                    BranchID = table.Column<int>(nullable: true),
-                    StateID = table.Column<int>(nullable: true)
+                    StateName = table.Column<string>(nullable: true),
+                    StateID = table.Column<int>(nullable: true),
+                    BranchID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
