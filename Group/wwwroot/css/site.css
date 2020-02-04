@@ -98,6 +98,10 @@ button.accept-policy {
    
 }
 
+.button {
+    width: 250px;
+}
+
     /* Dropdown button on hover & focus */
     .dropbtn:hover, .dropbtn:focus {
         background-color: #2c4db4;
