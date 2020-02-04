@@ -70,7 +70,7 @@ namespace Mappers.Areas.Identity.Pages.Account
             public string LastName { get; set; }
 
             [DataType(DataType.MultilineText)]
-            [Display(Name = "Current Base")]
+            [Display(Name = "Current Base")] 
             public string currentBase { get; set; } 
 
             [DataType(DataType.MultilineText)] 
@@ -91,7 +91,7 @@ namespace Mappers.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
