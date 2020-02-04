@@ -1,27 +1,41 @@
 ﻿@page
-@model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
 
-<link href="~/css/site.css" rel="stylesheet" />
+@model RegisterModel
+
+@{
+
+    ViewData["Title"] = "Register";
+
+}
 
 @*<link href="~/css/site.css" rel="stylesheet" />*@
 
 
+
 <h1 class="text-center">
+
     <img src="~/images/2020-01-27 (3).png" style="width:100%" />
+
 </h1>
 
 <h2 class="h2 span"><span>Register</span></h2>
 
-@*<form asp-route-returnUrl="@Model.ReturnUrl" method="post">*@
+
+
+
+
+
+
+
 
 <form class="form-inline " asp-route-returnUrl="@Model.ReturnUrl" method="post">
 
     <div asp-validation-summary="All" class="text-danger"></div>
 
+
+
     <section class="col-4">
+
         <div class="form-group">
 
             <label asp-for="Input.FirstName"></label>
@@ -29,9 +43,14 @@
             <input asp-for="Input.FirstName" class="form-control-lg" />
 
             <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+
         </div>
 
+
+
         <br />
+
+
 
         <div class="form-group">
 
@@ -40,9 +59,14 @@
             <input asp-for="Input.LastName" class="form-control-lg" />
 
             <span asp-validation-for="Input.LastName" class="text-danger"></span>
+
         </div>
 
+
+
         <br />
+
+
 
         <div class="form-group">
 
@@ -51,6 +75,7 @@
             <input asp-for="Input.currentBase" class="form-control-lg" />
 
             <span asp-validation-for="Input.currentBase" class="text-danger"></span>
+
         </div>
 
         <br />
@@ -58,127 +83,143 @@
     </section>
 
 
+
+
+
+
+
     <div class="col-2"></div>
 
-    <section class="col-5">
 
-        <br />
 
-        <section class="col-4">
+    <section class="col-4">
 
-            <div class="form-group">
 
-                <label asp-for="Input.Email"></label>
 
-                <br />
+        <div class="form-group">
 
-                <label asp-for="Input.Email">Email Address</label>
+            <label asp-for="Input.Email">Email Address</label>
 
-                <input asp-for="Input.Email" class="form-control-lg" />
+            <input asp-for="Input.Email" class="form-control-lg" />
 
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-
-            <br />
-
-            <div class="form-group">
-
-                <label asp-for="Input.Password"></label>
-
-                <br />
-
-                <label asp-for="Input.Password"></label>
-
-                <input asp-for="Input.Password" class="form-control-lg" />
-
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-
-            <br />
-
-            <div class="form-group">
-
-                <label asp-for="Input.ConfirmPassword"></label>
-
-                <br />
-
-                <input asp-for="Input.ConfirmPassword" class="form-control-lg" />
-
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-
-            <br />
-
-        </section>
-
-        <br />
-
-        <h2 class="text-left">Profile Network:</h2>
-
-        <br />
-
-        <div class="col-12">
-
-            <br />
-
-            <font size="2">When checking the box, you are agreeing that other Military Families can see your profile such as: your name, photos, comments, email, and/or phone.</font>
-            <p><font size="2">Otherwise, Military families will not be able to see your profile, photos, email and/ or phone.</font></p>
-            <p><font size="2">If you wish to change it, go to 'edit profile' on the main menu.</font></p>
-
-            <div class="form-group form-check">
-
-                <label asp-for="Input.PublicProfile" class="form-check-label">
-
-                    <input class="form-check-input" asp-for="Input.PublicProfile" />
-
-                    @Html.DisplayNameFor(model => model.Input.PublicProfile)
-
-                    <span asp-validation-for="Input.PublicProfile"></span>
-                </label>
-            </div>
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
 
         </div>
 
+
+
         <br />
 
-        <div class="col-12">
 
-            <font size="2">Would you like to receive notifications? Such as, other military families contacting you or comments to your recommendations.</font>
 
-            <p><font size="2">If you do not check the box, you are not receiving any notifications.</font></p>
+        <div class="form-group">
 
-            <div class="form-group form-check">
+            <label asp-for="Input.Password"></label>
 
-                <label asp-for="Input.Notifications" class="form-check-label">
+            <input asp-for="Input.Password" class="form-control-lg" />
 
-                    <input class="form-check-input" asp-for="Input.Notifications" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
 
-                    @Html.DisplayNameFor(model => model.Input.Notifications)
-
-                    <span asp-validation-for="Input.Notifications"></span>
-
-                </label>
-            </div>
         </div>
 
         <br />
 
         <div class="form-group">
 
-            <button type="submit" class="btn btn-primary">Register</button>
+            <label asp-for="Input.ConfirmPassword"></label>
+
+            <input asp-for="Input.ConfirmPassword" class="form-control-lg" />
+
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
 
         </div>
-</section>
-        @*</form>*@
+        <br />
+
+    </section>
+    <br />
+    <h2 class="text-left">Profile Network:</h2>
+    <br />
+
+
+
+    <div class="col-12">
+
+        <br />
+
+        <font size="2">When checking the box, you are agreeing that other Military Families can see your profile such as: your name, photos, comments, email, and/or phone.</font>
+
+        <p><font size="2">Otherwise, Military families will not be able to see your profile, photos, email and/ or phone.</font></p>
+
+        <p><font size="2">If you wish to change it, go to 'edit profile' on the main menu.</font></p>
+
+
+
+        <div class="form-group form-check">
+
+            <label asp-for="Input.PublicProfile" class="form-check-label">
+
+                <input class="form-check-input" asp-for="Input.PublicProfile" />
+
+                @Html.DisplayNameFor(model => model.Input.PublicProfile)
+
+                <span asp-validation-for="Input.PublicProfile"></span>
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <br />
+
+
+
+
+
+    <div class="col-12">
+
+        <font size="2">Would you like to receive notifications? Such as, other military families contacting you or comments to your recommendations.</font>
+
+        <p><font size="2">If you do not check the box, you are not receiving any notifications.</font></p>
+
+        <div class="form-group form-check">
+
+
+
+            <label asp-for="Input.Notifications" class="form-check-label">
+
+                <input class="form-check-input" asp-for="Input.Notifications" />
+
+                @Html.DisplayNameFor(model => model.Input.Notifications)
+
+                <span asp-validation-for="Input.Notifications"></span>
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <br />
+
+
+
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-primary">Register</button>
+
+    </div>
 
 </form>
-
-
-
 
 
 
 @section Scripts {
 
     <partial name="_ValidationScriptsPartial" />
+
 }

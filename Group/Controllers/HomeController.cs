@@ -18,12 +18,13 @@ namespace Group.Controllers
     public class HomeController : Controller
     {
         //private readonly UserManager<Mapper> _userManager;
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         //private readonly ILogger<HomeController> _logger;
 
         public HomeController(ApplicationDbContext context/*ILogger<HomeController> logger, UserManager<Mapper> userManager*/)
         {
             _context = context;
+
             //_logger = logger;
             //_userManager = userManager;
 

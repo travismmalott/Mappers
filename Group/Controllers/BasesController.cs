@@ -47,13 +47,13 @@ namespace Mappers.Controllers
         // GET: Bases/Create
         public IActionResult Create()
         {
-            //Get branches for dropdown menu
+            //Get branches for viewbag
             var branches = _context.
                Branches
                .Select(x =>
                new SelectListItem(x.Branches, x.BranchID.ToString()))
            .ToList();
-            //Get states for dropdown menu
+            //Get states for Viewbag 
             var states = _context.
               States
                .Select(x =>
