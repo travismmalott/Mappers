@@ -10,8 +10,9 @@ namespace Group.Models
     {
         public int BaseID { get; set; }
         public string City { get; set; }
-        public string State { get; set; }
         public string BaseName { get; set; }
+        public string StateName { get; set;}       
+        public State State { get; set; }
         public Branch Branch { get; set; }
         public ICollection<Review> Reviews { get; set; }
 

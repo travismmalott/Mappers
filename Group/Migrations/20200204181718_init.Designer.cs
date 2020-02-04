@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mappers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200203191329_init")]
+    [Migration("20200204181718_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,11 +37,11 @@ namespace Mappers.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("StateID")
                         .HasColumnType("int");
+
+                    b.Property<string>("StateName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BaseID");
 
@@ -388,7 +388,7 @@ namespace Mappers.Migrations
                         .WithMany("Bases")
                         .HasForeignKey("BranchID");
 
-                    b.HasOne("Group.Models.State", null)
+                    b.HasOne("Group.Models.State", "State")
                         .WithMany("Bases")
                         .HasForeignKey("StateID");
                 });
