@@ -13,8 +13,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Group.Controllers
 {
-
-
     public class HomeController : Controller
     {
         //private readonly UserManager<Mapper> _userManager;
@@ -27,12 +25,8 @@ namespace Group.Controllers
 
             //_logger = logger;
             //_userManager = userManager;
-
-
         }
-
-         
-        public ActionResult UsaOverView()
+        public ActionResult Overview()
         {
             return View();
         }
@@ -45,15 +39,6 @@ namespace Group.Controllers
             return View();
         }
 
-        public ActionResult USAoverview()
-        {
-            return View();
-        }
-
-        public ActionResult Texas()
-        {
-            return View();
-        }
         //[HttpPost]
         //public IActionResult Index(string iEmail, string iPassword)
         //{
