@@ -20,6 +20,29 @@ namespace Mappers.Controllers
             _context = context;
         }
 
+        public IActionResult FortSamHouston()
+        {
+            return View();
+        }
+
+        public IActionResult LacklandAFB()
+        {
+            return View();
+        }
+
+        public IActionResult WalterReedMedical()
+        {
+            return View();
+        }
+
+        public IActionResult FortMeade() 
+        {
+            return View();
+        }
+        public IActionResult EverttNAS()
+        {
+            return View();
+        }
         // GET: Bases
         public async Task<IActionResult> Index()
         {
