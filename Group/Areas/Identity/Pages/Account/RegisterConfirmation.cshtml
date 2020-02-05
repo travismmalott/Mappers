@@ -1,0 +1,26 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register Confirmation";
+}
+<h2 class="h2 span text-center"><span>Mapper Registration Confirmation</span></h2>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+
+        <div class="container text-center" style="margin-top:30px">
+            <p>
+                Mappers does not currently have a real email sender registered, please confirm your Mapper Account by clicking the link below to simulate email confirmation:
+            </p>
+            <h4 class="text-center">
+                <strong><link /><a id="confirm-link" href="~/home/overview">Confirm your Mapper Account</a></strong>
+            </h4>
+        </div>
+    }
+    else
+    {
+        <p>
+            Please check your email to confirm your account.
+        </p>
+    }
+}
