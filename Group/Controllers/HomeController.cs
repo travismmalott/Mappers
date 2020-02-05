@@ -15,16 +15,15 @@ namespace Group.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly UserManager<Mapper> _userManager;
+        private readonly UserManager<Mapper> _userManager;
         private readonly ApplicationDbContext _context;
-        //private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ApplicationDbContext context/*ILogger<HomeController> logger, UserManager<Mapper> userManager*/)
+        public HomeController(ApplicationDbContext context,ILogger<HomeController> logger, UserManager<Mapper> userManager)
         {
             _context = context;
-
-            //_logger = logger;
-            //_userManager = userManager;
+            _logger = logger;
+            _userManager = userManager;
         }
         public ActionResult Overview()
         {
@@ -32,10 +31,7 @@ namespace Group.Controllers
         }
         public ActionResult Index()
         {
-            //var model = _context.Bases.ToList();
-            //var user = await _userManager.GetUserAsync(User);
-            //ViewBag.User = user?.UserName;
-            //ViewBag.FirstName = user?.firstName;
+           
             return View();
         }
 
