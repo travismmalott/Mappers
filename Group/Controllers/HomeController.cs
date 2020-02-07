@@ -35,11 +35,11 @@ namespace Group.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public IActionResult Index(string iEmail, string iPassword)
-        //{
-        //    return View("usaoverview");
-        //}
+        [HttpPost]
+        public IActionResult Index(string iEmail, string iPassword)
+        {
+            return View("Overview");
+        }
 
         [HttpGet]
         public ActionResult About()
