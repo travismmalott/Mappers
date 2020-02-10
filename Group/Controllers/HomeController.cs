@@ -36,10 +36,10 @@ namespace Group.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string iEmail, string iPassword)
-        {
-            return View("Overview");
-        }
+        //public IActionResult Index(string iEmail, string iPassword)
+        //{
+        //    return View("Overview");
+        //}
 
         [HttpGet]
         public ActionResult About()
