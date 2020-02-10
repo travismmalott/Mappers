@@ -8,7 +8,7 @@
 
 }
 
-@*<link href="~/css/site.css" rel="stylesheet" />*@
+<link href="~/css/site.css" rel="stylesheet" />*
 
 <h1 class="text-center">
 
@@ -20,106 +20,110 @@
 
 
 <form class="form-inline " asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    
+        <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
 
-    <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="col-4">
+            
+            <div class="form group">
 
-    <section class="col-4">
+                <label asp-for="Input.FirstName">First Name</label>
+                
+                <input asp-for="Input.FirstName" class="form-control-lg" />
+                
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
 
-        <div class="form-group">
+            </div>
 
-            <label asp-for="Input.FirstName"></label>
+           <br />
 
-            <input asp-for="Input.FirstName" class="form-control-lg" />
+            <div class="form-group">
 
-            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                <label asp-for="Input.LastName">Last Name</label>
 
-        </div>
+                <input asp-for="Input.LastName" class="form-control-lg" />
 
-        <br />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
 
-        <div class="form-group">
+            </div>
 
-            <label asp-for="Input.LastName"></label>
+            <br />
 
-            <input asp-for="Input.LastName" class="form-control-lg" />
+            <div class="form-group">
 
-            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                <label asp-for="Input.currentBase"></label>
 
-        </div>
+                <input asp-for="Input.currentBase" class="form-control-lg" />
 
-        <br />
+                <span asp-validation-for="Input.currentBase" class="text-danger"></span>
 
-        <div class="form-group">
+            </div>
 
-            <label asp-for="Input.currentBase"></label>
-
-            <input asp-for="Input.currentBase" class="form-control-lg" />
-
-            <span asp-validation-for="Input.currentBase" class="text-danger"></span>
-
-        </div>
-
-        <br />
-
-    </section>
-
-    <div class="col-2"></div>
-
-    <section class="col-4">
-
-        <div class="form-group">
-
-            <label asp-for="Input.Email">Email Address</label>
-
-            <input asp-for="Input.Email" class="form-control-lg" />
-
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
+            <br />
 
         </div>
-
-        <br />
-
-        <div class="form-group">
-
-            <label asp-for="Input.Password"></label>
-
-            <input asp-for="Input.Password" class="form-control-lg" />
-
-            <span asp-validation-for="Input.Password" class="text-danger"></span>
-
-        </div>
-
-        <br />
-
-        <div class="form-group">
-
-            <label asp-for="Input.ConfirmPassword"></label>
-
-            <input asp-for="Input.ConfirmPassword" class="form-control-lg" />
-
-            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-
-        </div>
-        <br />
-
-    </section>
-    <br />
-    <h2 class="text-left">Profile Network:</h2>
-    <br />
-
-    <div class="col-12">
-
-        <br />
-
-        <font size="2">When checking the box, you are agreeing that other Military Families can see your profile such as: your name, photos, comments, email, and/or phone.</font>
-
-        <p><font size="2">Otherwise, Military families will not be able to see your profile, photos, email and/ or phone.</font></p>
-
-        <p><font size="2">If you wish to change it, go to 'edit profile' on the main menu.</font></p>
-
     </div>
+        <div class="col-2"></div>
 
-     <div class="form-group form-check col-12">
+    <div class="row">
+        <section class="col-5">
+
+            <div class="form-group">
+
+                <label asp-for="Input.Email">Email Address</label>
+
+                <input asp-for="Input.Email" class="form-control-lg" />
+
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+            </div>
+
+            <br />
+
+            <div class="form-group">
+
+                <label asp-for="Input.Password"></label>
+
+                <input asp-for="Input.Password" class="form-control-lg" />
+
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            </div>
+
+            <br />
+
+            <div class="form-group">
+
+                <label asp-for="Input.ConfirmPassword"></label>
+
+                <input asp-for="Input.ConfirmPassword" class="form-control-lg" />
+
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+            </div>
+            <br />
+
+        </section>
+        <br />
+    </div>
+        
+        <h2 class="text-left">Profile Network:</h2>
+        <br />
+
+        <div class="col-12">
+
+            <br />
+
+            <font size="2">When checking the box, you are agreeing that other Military Families can see your profile such as: your name, photos, comments, email, and/or phone.</font>
+
+            <p><font size="2">Otherwise, Military families will not be able to see your profile, photos, email and/ or phone.</font></p>
+
+            <p><font size="2">If you wish to change it, go to 'edit profile' on the main menu.</font></p>
+
+        </div>
+
+        <div class="form-group form-check col-12">
 
             <label asp-for="Input.PublicProfile" class="form-check-label">
 
@@ -133,40 +137,40 @@
 
         </div>
 
-    <br />
+        <br />
 
-    <div class="col-12">
+        <div class="col-12">
 
-        <font size="2">Would you like to receive notifications? Such as, other military families contacting you or comments to your recommendations.</font>
+            <font size="2">Would you like to receive notifications? Such as, other military families contacting you or comments to your recommendations.</font>
 
-        <p><font size="2">If you do not check the box, you are not receiving any notifications.</font></p>
+            <p><font size="2">If you do not check the box, you are not receiving any notifications.</font></p>
 
-    </div>
+        </div>
 
-    <div class="form-group form-check col-12">
+        <div class="form-group form-check col-12">
 
-        <label asp-for="Input.Notifications" class="form-check-label">
+            <label asp-for="Input.Notifications" class="form-check-label">
 
-            <input class="form-check-input" asp-for="Input.Notifications" />
+                <input class="form-check-input" asp-for="Input.Notifications" />
 
-            @Html.DisplayNameFor(model => model.Input.Notifications)
+                @Html.DisplayNameFor(model => model.Input.Notifications)
 
-            <span asp-validation-for="Input.Notifications"></span>
+                <span asp-validation-for="Input.Notifications"></span>
 
-        </label>
+            </label>
 
-    </div>
+        </div>
 
-    <br />
+        <br />
 
 
 
-    <div class="form-group col-12">
+        <div class="form-group col-12">
 
-        <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Register</button>
 
-    </div>
-
+        </div>
+    
 </form>
 
 

@@ -15,6 +15,7 @@ namespace Group.Models
         public State State { get; set; }
         public Branch Branch { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public ICollection<Mapper> Mappers { get; set; }
 
         //Out of scope - integration of Google Maps for Base Page
         //public double Longitude { get; set; }

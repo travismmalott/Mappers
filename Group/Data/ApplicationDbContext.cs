@@ -18,7 +18,6 @@ namespace Group.Data
         public DbSet<State> States { get; set; }
         public DbSet<Message> Messages { get; set; }
         
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

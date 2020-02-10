@@ -1,35 +1,36 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-    <h2 class="h2 span"><span>Walter Reed Medical</span></h2>
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
+<h2 class="h2 span"><span>Walter Reed Medical</span></h2>
 
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
 
-            <div class="col-4">
-             
-            </div>
+        </div>
 
-            <div class="col-4" align="right">
-                <div class="dropdown text-left">
-                    <button onclick="myFunction()" class="dropbtn button">Categories</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                        <a href="#">School</a>
-                        <a href="#">Day Care</a>
-                        <a href="#">Entertainment</a>
-                        <a href="#">Restaurant</a>
-                        <a href="#">Living</a>
-                        <a href="#">Dental</a>
-                        <a href="#">Salon</a>
-                    </div>
+        <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/states/Maryland">Maryland</a>
+            </h6>
+        </div>
+
+        <div class="col-4" align="right">
+            <div class="dropdown text-left">
+                <button onclick="myFunction()" class="dropbtn button">Categories</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">School</a>
+                    <a href="#">Day Care</a>
+                    <a href="#">Entertainment</a>
+                    <a href="#">Restaurant</a>
+                    <a href="#">Living</a>
+                    <a href="#">Dental</a>
+                    <a href="#">Salon</a>
                 </div>
+            </div>
 
-                <script>
+            <script>
                 /* When the user clicks on the button,
                 toggle between hiding and showing the dropdown content */
                 function myFunction() {
@@ -51,7 +52,96 @@
                         }
                     }
                 }
-                </script>
-            </div>
+            </script>
         </div>
+        <div class="col-4">
+            <button onclick="document.getElementById('myInput').value = ''">Submit</button>
+
+            <input type="text" value="Add Recommendation" id="myInput">
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/md restaurant1.jpg" style="width:100%;" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Billy Bob <strong>|</strong> February 2020 <strong>|</strong> Restuarant</h6>
+            <h3>IL PIZZICO - RockVille, MD</h3>
+
+            <font size="2">
+                This is 17mins away from Walter Reed Medical Center. Highly recommend this restuarant, especially with Valentine around the corner!
+                It's perfect for dinner dates and anniveraries as well.
+                I took my wife here and she loved it. Best 10yrs anniversary dinner spent! Happy Wife, happy life!
+            </font>
+            <br />
+            <font size="2">
+                There is also other things to do around the area. I suggest trying <strong>Gamberi e capesante alla Kiara</strong>
+                which is sauteed shrimp and sea scallops, braised fennel, crispy pancetta and Brandy cream sauce.
+                The sauce was the cherry on top!
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">72 Reviews</font>
+            </div>
+
+        </div>
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/artech house DC.jpg"  style="width:100%;" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Issac Scott <strong>|</strong> February 2020 <strong>|</strong> Museum</h6>
+            <h3>ARTECH House - Washington DC</h3>
+
+            <font size="2">
+                So I took my wife here for her birthday and early Valentine. This place is almost 30mins drive from Walter Reed. Definitely worth it. 
+                Not only did my wife enjoyed it, I, myself enjoyed it as well because it's not just a museum but a show. It's interactive and there's  different section which really brought out the themes.
+            </font>
+            <br />
+            <font size="2">
+                There is a bar as well and you have like almost 2 hours with a small group of people so it's not overwhelmed and you're not in a hurry as well.
+                Very relaxing as well; they have bean bags to lay on because the art is all around you, even on the ceiling! It's a must! Trust me!
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">89 Reviews</font>
+            </div>
+
+        </div>
+
     </div>
+</div>

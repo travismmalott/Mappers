@@ -202,6 +202,14 @@ body {
     margin-bottom: 5rem;
 }
 
+.p {
+    padding: 35px;
+}
+
+
+
+
+
 
 
 
@@ -329,3 +337,4 @@ body {
         transform: translateY(5%);
     }
 }
+
