@@ -111,7 +111,7 @@ namespace Mappers.Controllers
             @base.State = state;
             //adds StateName to Base in database
             @base.StateName = state.Name;
-           @base.
+           //@base.
 
 
         
