@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 <h2 class="h2 span"><span>Washington</span></h2>
 
 
@@ -11,47 +9,65 @@
         </div>
 
         <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/Bases/Everett">NAS Everett</a>
+            </h6>
+            <h6 class="text-center">
+                <a href="~/Bases/LewisMcChord">Joint Base Lewis-McChord </a>
+            </h6>
+        </div>
+
+        <div class="col-4">
 
         </div>
 
-        <div class="col-4" align="right">
-            <div class="dropdown text-left">
-                <button onclick="myFunction()" class="dropbtn button">Categories</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#">School</a>
-                    <a href="#">Day Care</a>
-                    <a href="#">Entertainment</a>
-                    <a href="#">Restaurant</a>
-                    <a href="#">Living</a>
-                    <a href="#">Dental</a>
-                    <a href="#">Salon</a>
+
+        <div class="col-6">
+            <h3 class="custom"><strong>Number of Active Duty and Reserve Members in Washington</strong></h3>
+            <p class="para">
+                Washington has 7 military bases and multiple Coast Guard stations. 
+                There was a total of 1.3 million active duty military and more than 800,000 reserves as of September 2017. 
+                In Washington there are a total of 45,343 active duty personnel.
+            </p>
+            <h3 class="custom"><strong>Climate</strong></h3>
+            <p class="para">
+                Washington's climate varies greatly from east to west.In general, the western part of the state tends to be humid, mild and altogether temperate, whereas Eastern Washington is characterized by a much drier, cooler climate. Summer days west of the Cascades rarely rise above 80 degrees Fahrenheit, and winter is fairly pleasant. The eastern part of the state, on the other hand, experiences very cold winters and warm summers.
+            </p>
+            <h3 class="custom"><strong>Population</strong></h3>
+            <p class="para">
+                Current estimates show Washington with a current population of 7.17 million, with projected growth estimated to be above 1.7% rapid growth is expected to continue.         This population places Washington as the 13th most populous state in the country, but only 25th in terms of population density.
+            </p>
+        </div>
+
+        <div class="col-2">
+
+        </div>
+
+        <div class="col-4">
+            <div class="gallery">
+                <div class="gallery__strip__wrapper">
+                    <div class="gallery__strip one">
+                        <div class="photo">
+                            <div class="photo__image"><img src="~/images/WACapital.jpg" /></div>
+                            <div class="photo__name">Olympia, WA</div>
+                        </div>
+
+                        <div class="photo">
+                            <div class="photo__image"><img src="~/images/Seattle-Skyline.jpg" /></div>
+                            <div class="photo__name">Seattle, WA</div>
+                         </div>
+
+                        <div class="photo">
+                             <div class="photo__image"><img src="~/images/Mount_Rainier.jpg" /> </div>
+                             <div class="photo__name">Mount Rainier</div>
+                        </div>
+                        <div class="photo">
+                             <div class="photo__image"><img src="~/images/spokaneWA.jpg" /></div>
+                             <div class="photo__name">Spokane, WA</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <script>
-                /* When the user clicks on the button,
-                toggle between hiding and showing the dropdown content */
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-                function filterFunction() {
-                    var input, filter, ul, li, a, i;
-                    input = document.getElementById("myInput");
-                    filter = input.value.toUpperCase();
-                    div = document.getElementById("myDropdown");
-                    a = div.getElementsByTagName("a");
-                    for (i = 0; i < a.length; i++) {
-                        txtValue = a[i].textContent || a[i].innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            a[i].style.display = "";
-                        } else {
-                            a[i].style.display = "none";
-                        }
-                    }
-                }
-            </script>
         </div>
     </div>
 </div>
