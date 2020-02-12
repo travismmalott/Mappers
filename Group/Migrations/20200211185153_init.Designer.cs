@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mappers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200204181718_init")]
+    [Migration("20200211185153_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -396,7 +396,7 @@ namespace Mappers.Migrations
             modelBuilder.Entity("Group.Models.Mapper", b =>
                 {
                     b.HasOne("Group.Models.Base", "Base")
-                        .WithMany()
+                        .WithMany("Mappers")
                         .HasForeignKey("BaseID");
 
                     b.HasOne("Mappers.Models.Branch", "Branch")

@@ -394,7 +394,7 @@ namespace Mappers.Migrations
             modelBuilder.Entity("Group.Models.Mapper", b =>
                 {
                     b.HasOne("Group.Models.Base", "Base")
-                        .WithMany()
+                        .WithMany("Mappers")
                         .HasForeignKey("BaseID");
 
                     b.HasOne("Mappers.Models.Branch", "Branch")

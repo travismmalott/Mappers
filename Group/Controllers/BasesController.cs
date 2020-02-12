@@ -19,7 +19,14 @@ namespace Mappers.Controllers
         {
             _context = context;
         }
-
+        public IActionResult LewisMcChord() 
+        {
+            return View();
+        }
+        public IActionResult Everett()
+        {
+            return View();
+        }
         public IActionResult FortSamHouston()
         {
             return View();
