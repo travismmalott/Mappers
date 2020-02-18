@@ -1,0 +1,145 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<h2 class="h2 span"><span>Fort Sam Houston</span></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/states/Texas">Texas</a>
+            </h6>
+        </div>
+
+        <div class="col-4" align="right">
+            <div class="dropdown text-left">
+                <button onclick="myFunction()" class="dropbtn button">Categories</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">School</a>
+                    <a href="#">Day Care</a>
+                    <a href="#">Entertainment</a>
+                    <a href="#">Restaurant</a>
+                    <a href="#">Living</a>
+                    <a href="#">Dental</a>
+                    <a href="#">Salon</a>
+                </div>
+            </div>
+
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                function filterFunction() {
+                    var input, filter, ul, li, a, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    div = document.getElementById("myDropdown");
+                    a = div.getElementsByTagName("a");
+                    for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            a[i].style.display = "";
+                        } else {
+                            a[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="col-12">
+            <button onclick="document.getElementById('myInput').value = ''">Submit</button>
+
+            <input type="text" value="Add Recommendation" id="myInput">
+        </div>
+       
+
+
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/lapanaderia.jpg" style="width: 100%" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Travis Malott <strong>|</strong> February 2020 <strong>|</strong> Restaurant</h6>
+            <h3>La Panderia</h3>
+
+            <font size="2">
+                I love La Panderia so much. I wish we had something like this is at our last station, Tacoma.
+                My wife and I went here each morning we had free during our short PCS in San Antonio. The self service part is fun and reminds me of Asian bakeries in Seattle.
+                There are so many different baked goods to choose from. We liked the tres leches croissant and the tequila almond croissant.
+
+            </font>
+            <br />
+            <font size="2">
+                The breakfast menu is also amazing. Its full of build your own tortas, chocolate French toast, and Mexican hot chocolate.
+                Also it's really cheap! It's always busy so keep that in mind when you go!
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">56 Reviews</font>
+            </div>
+
+        </div>
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/coyboysdancehall.jpg" style="width: 100%" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Brad Stephen <strong>|</strong> February 2020 <strong>|</strong> Entertainment</h6>
+            <h3>Cowboys Dance Hall </h3>
+
+            <font size="2">
+                Indoor bull riding!
+
+                This place is huge. It's the largest bar in south Texas, great addition to any newcomers/military people new to San Antonio’s bar rotation.
+                They have a mechanical bull if that's your thing, I've learned my lesson on that thing. Number one, don't talk smack to the bull operator.
+                You're just going to have a bad time. Also, don't tie your hand to the bull, if you're going to get bucked off, just get bucked off.
+                I barely walked away from this thing, after showing off to some Canadians who were visiting, staring wide-eyed in wonder at the mechanical bull.
+                It was a matter of Texas pride to show them up, on behalf of every Texan. I lasted 20 seconds, new record. The next day, my thighs were deep shades black and blue.
+            </font>
+            <br />
+            <font size="2">
+                This is one of my favorite places to take out of state visitors, who have never seen a DANCE HALL before, and let them take in the Texas traditions.
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">22 Reviews</font>
+            </div>
+
+        </div>
+    </div>
+</div>

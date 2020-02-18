@@ -1,0 +1,142 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<h2 class="h2 span"><span>Lackland AFB</span></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/states/Texas">Texas</a>
+            </h6>
+        </div>
+
+        <div class="col-4" align="right">
+            <div class="dropdown text-left">
+                <button onclick="myFunction()" class="dropbtn button">Categories</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">School</a>
+                    <a href="#">Day Care</a>
+                    <a href="#">Entertainment</a>
+                    <a href="#">Restaurant</a>
+                    <a href="#">Living</a>
+                    <a href="#">Dental</a>
+                    <a href="#">Salon</a>
+                </div>
+            </div>
+
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                function filterFunction() {
+                    var input, filter, ul, li, a, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    div = document.getElementById("myDropdown");
+                    a = div.getElementsByTagName("a");
+                    for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            a[i].style.display = "";
+                        } else {
+                            a[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="col-12">
+            <button onclick="document.getElementById('myInput').value = ''">Submit</button>
+
+            <input type="text" value="Add Recommendation" id="myInput">
+        </div>
+       
+
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/JohnsonHigh.jpg" style=" width:100%"/>
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Bob Cat <strong>|</strong> February 2020 <strong>|</strong> School</h6>
+            <h3>Johnson High School</h3>
+
+            <font size="2">
+                I homeschooled my kids before moving to San Antonio since we moved around so much. 
+                Putting them in public school was something I grappled with constantly. 
+                When we found out we were being stationed in San Antonio we took a drive out to Johnson High School and fell in love with the beautiful campus. 
+                We immediately started looking at homes within Johnson boundaries so we could give our kids a fresh start, and it was the best move we ever made. 
+                They have received a first-class education at Johnson that can't be found in many private school settings. 
+                We have found the teachers to be dedicated people who really care about their students and go the extra mile, making themselves available for tutoring before and after school.
+            </font>
+            <br />
+            <font size="2">
+                And what can I say about the band, except wow! My son has so many unforgettable times competing with the award-winning Johnson Jaguar Band, and those are truly priceless experiences that private school tuition can't buy. 
+                Johnson High School is San Antonio's best kept secret. I have never regretted the decision to send our kids there and highly recommend it to anyone who wants to give their kids a wonderful high school experience and a decent chance at success beyond high school.
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">27 Reviews</font>
+            </div>
+
+        </div>
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/CometCleaners.jpg" style="width: 100%" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Brandon Rivera <strong>|</strong> February 2020 <strong>|</strong> Living</h6>
+            <h3>Comet Cleaners </h3>
+
+            <font size="2">
+                My daughter somehow got grey greasy halloween make-up on my white duvet cover. 
+                Needed a good dry cleaner, not just a glorified laundry-mat, so took it to Comet and was told they don't dry clean or even spot clean bed linens. 
+                Said they would only be able to wash it (I can do that at home). 
+                That seemed odd so I drove to a second Comet location nearby, but was told the same thing. 
+                On the way home I stopped at Culpeppers and they didn't blink. 
+                Told me their staff was used to these challenges and would do whatever it takes to get most of it out - which is exactly what they did. 
+                Paid a bit more but got the job done by confident professionals. I recommend new military family’s making Culpeppers their new dry cleaner of choice.
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">13 Reviews</font>
+            </div>
+
+        </div>
+    </div>
+</div>
