@@ -1,0 +1,100 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+<h2 class="h2 span"><span>Fort Sam Houston</span></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/states/Texas">Texas</a>
+            </h6>
+        </div>
+
+        <div class="col-4" align="right">
+            <div class="dropdown text-left">
+                <button onclick="myFunction()" class="dropbtn button">Categories</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">School</a>
+                    <a href="#">Day Care</a>
+                    <a href="#">Entertainment</a>
+                    <a href="#">Restaurant</a>
+                    <a href="#">Living</a>
+                    <a href="#">Dental</a>
+                    <a href="#">Salon</a>
+                </div>
+            </div>
+
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                function filterFunction() {
+                    var input, filter, ul, li, a, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    div = document.getElementById("myDropdown");
+                    a = div.getElementsByTagName("a");
+                    for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            a[i].style.display = "";
+                        } else {
+                            a[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="col-12">
+            <button onclick="document.getElementById('myInput').value = ''">Submit</button>
+
+            <input type="text" value="Add Recommendation" id="myInput">
+        </div>
+        <div class="col-4" style="padding:35px">
+            <img src="~/images/riverwalkTX.jpg" style="width:100%;" />
+        </div>
+
+        <div class="col-6" style="padding:35px">
+            <h6>Bob Cat <strong>|</strong> February 2020 <strong>|</strong> Entertainment & Restaurant</h6>
+            <h3>Riverwalk - San Antonio, TX</h3>
+
+            <font size="2">
+                This place is amazing! It's only 13mins away from Fort Sam Houston too! Great place for dates with your significant other, especially with Valentine is around the corner.
+                It's also kid-friendly, enjoy the walking around the riverwalk, or take the boat that will take you through, which my kids loved it. There is also a Riverwalk Mall, so check that out too.
+            </font>
+            <br />
+            <font size="2">
+               The restaurant I took my wife to is called <strong>Iron Cactus</strong>. Sat outside and enjoy the view of the Riverwalk. Highly recommended trying that place to eat.
+                I also heard that during the holidays, they put up Christmas lights in the trees! Heard it's beautiful at night. So check that out as well!
+            </font>
+        </div>
+
+        <div class="col-2" style="padding:35px">
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <br />
+            <div class="text-left">
+                <font size="2">97 Reviews</font>
+            </div>
+
+        </div>
+    </div>
+</div>

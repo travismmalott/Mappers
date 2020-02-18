@@ -1,0 +1,141 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<h2 class="h2 span"><span>Joint Base Lewis-McChord</span></h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4">
+            <h6 class="text-center">
+                <a href="~/states/Washington">Washington</a>
+            </h6>
+        </div>
+
+        <div class="col-4" align="right">
+            <div class="dropdown text-left">
+                <button onclick="myFunction()" class="dropbtn button">Categories</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#">School</a>
+                    <a href="#">Day Care</a>
+                    <a href="#">Entertainment</a>
+                    <a href="#">Restaurant</a>
+                    <a href="#">Living</a>
+                    <a href="#">Dental</a>
+                    <a href="#">Salon</a>
+                </div>
+            </div>
+
+            <script>
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                function filterFunction() {
+                    var input, filter, ul, li, a, i;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    div = document.getElementById("myDropdown");
+                    a = div.getElementsByTagName("a");
+                    for (i = 0; i < a.length; i++) {
+                        txtValue = a[i].textContent || a[i].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            a[i].style.display = "";
+                        } else {
+                            a[i].style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="col-12">
+            <button onclick="document.getElementById('myInput').value = ''">Submit</button>
+
+            <input type="text" value="Add Recommendation" id="myInput">
+        </div>
+    </div>
+</div>
+<div class="col-4">
+    <img src="~/images/oldspaghettifactory.jpg" style="width: 100%" />
+</div>
+
+<div class="col-6" style="padding:35px">
+    <h6>Brandon Rivera <strong>|</strong> February 2020 <strong>|</strong> Restuarant</h6>
+    <h3>The Old Spaghetti Factory</h3>
+
+    <font size="2">
+        Just a 20 minute drive north of Joint Base Lewis-McChord. The waitress seated us right away and also took our order right away. We got soup and she really enjoyed it and so did I.
+        Definitely would recommend to anyone and family. The food was amazing and came out relatively fast.
+        We also were seated in a train car which we thought was amazing.
+    </font>
+    <br />
+    <font size="2">
+        I suggest trying the <strong>Garlic Mizithra</strong> which is dpaghetti with Mizithra Cheese and browned butter tossed with a blend of sauteed garlic, back and mushrooms.
+        Near the Seymour Botanical Conservatory. Great for a night out before stopping for dinner nearby.
+    </font>
+</div>
+
+<div class="col-2" style="padding:35px">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <br />
+    <div class="text-left">
+        <font size="2">56 Reviews</font>
+    </div>
+
+</div>
+<div class="col-4" style="padding:35px">
+
+    <img src="~/images/Lemay's.jpg" style="width: 100%" />
+</div>
+
+<div class="col-6" style="padding:35px">
+    <h6>Bob Cat <strong>|</strong> February 2020 <strong>|</strong> Musuem</h6>
+    <h3>LeMay - America's Car Museum</h3>
+
+    <font size="2">
+        My family and I have visited this location several times and each time they have a new showcase on the vehicles they have on the main floor.
+        When I went there last we were able to see the lovely high ceilings and  the dozens of vehicles it housed on the first story.
+        As we spiraled down one level at a time we got to see a nice breakdown of what they had to offer.
+
+    </font>
+    <br />
+    <font size="2">
+        It's mostly a place to go out and explore. The place is kept very clean and there is plenty of respect from other visitors to not mess with the vehicles.
+        I'd definitely recommend checking out the car simulation in the basement. Plenty of fun to be had here. A bit pricey but woth the spend at least once.
+    </font>
+</div>
+
+<div class="col-2" style="padding:35px">
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
+
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <br />
+    <div class="text-left">
+        <font size="2">12 Reviews</font>
+    </div>
+
+</div>
+
