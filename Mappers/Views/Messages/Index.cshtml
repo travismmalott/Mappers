@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Mapper> SignInManager
+@inject UserManager<Mapper> UserManager
+
+<h1 class="text-center">
+    <img src="/images/2019-12-22 (6).png" style="width:100%" />
+</h1>
+
+@{
+    ViewData["Title"] = "Messaging";
+}
+
+<h2 class="h2 span"><span>Messages</span></h2>
+
+<div class="container">
+    <ul id="messages">
+    </ul>
+    <input id="text" />
+
+    <button class="badge-pill badge-primary shadow-lg" id="send">
+        Send Message
+    </button>
+</div>
+@section Scripts{
+
+    <div class="container text-center">
+        <script>
+            //execute code every second
+            setInterval(function () {
+                //clear the list, get all messages, add messages to list
+
+                $.ajax({
+                    url: '/api/MessageService',
+                    type: 'get'
+                }).done(function (data) {
+                    $('#messages').html('');
+                    for (var i in data) {
+                        $('#messages').append('<li>' + data[i].text + '</li>');
+                    }
+                });
+            }, 1000);
+
+            //execute code when the button is clicked
+            $('#send').click(function () {
+
+                $.ajax({
+                    url: '/api/MessageService',
+                    type: 'post',
+                    data: JSON.stringify({ text: $('#text').val() }),
+                    contentType: "application/json"
+                }).done(function () {
+                });
+            });
+
+        </script>
+    </div>
+}

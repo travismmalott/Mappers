@@ -1,0 +1,55 @@
+﻿<link href="~/css/site.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h2 class="h2 span"><span>Profile</span></h2>
+<div class="container">
+    <div class="row">
+        <div class="col-4 text-left">
+
+            <div class="frame">
+                <label for="file">
+                    <input type="file" id="file" name="file" accept="image/*" onchange="loadFile(event)" style="opacity:0;">
+                    <img id="output" style="width:100%; height:100%" />
+                </label>
+                <script>
+                    var loadFile = function (event) {
+                        var reader = new FileReader();
+                        reader.onload = function () {
+                            var output = document.getElementById('output');
+                            output.src = reader.result;
+                        };
+                        reader.readAsDataURL(event.target.files[0]);
+                    };
+                </script>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4 text-right">
+
+            <style>
+                .checked {
+                    color: orange;
+                }
+            </style>
+
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <br />
+            <font size="2">23 Reviews</font>
+            <br />
+            <i class='far fa-envelope' style='font-size:24px'><font size="4">bobbycatt@yahoo.com</font></i>
+            <br />
+            <i class='fas fa-phone-alt' style='font-size:24px'><font size="4">(812)432-5690</font></i>
+        </div>
+    </div>
+</div>

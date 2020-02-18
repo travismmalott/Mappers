@@ -1,0 +1,164 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Mapper> SignInManager
+@inject UserManager<Mapper> UserManager
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="~/images/MappersFavIcon.png" />
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] = Mappers</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <ul class="navbar-nav">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline topnav" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="nav-link btn btn-link text-dark align">Logout</button>
+                    </form>
+                </li>
+            }
+            else
+            {            
+            }
+        </ul>
+    </div>
+
+
+    <div class="container">
+
+
+
+        <header class="text-center">
+
+            <img src="~/images/TransparentBackground.png" width="400" />
+
+
+
+        </header>
+
+
+
+        <section>
+
+            <div class="row text-center">
+
+
+
+                <div class="col-3">
+
+                    <link /><a href="/home/index">Home</a>
+
+                </div>
+
+
+
+                <div class="col-3">
+
+                    <link /><a href="/home/About">About</a>
+
+                </div>
+
+
+
+                <div class="col-3">
+
+                    <link /><a href="~/Messages/Index">Message</a>
+
+                </div>
+
+
+
+                <div class="col-3">
+
+                    <ul class="nav navbar-nav" style="margin:0 0 0 81px;">
+
+                        <li class="dropdown">
+
+                            <a class="dropdown-toggle" style="padding: 0 15px;" data-toggle="dropdown" href="#">
+
+                                Menu
+
+                                <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="/home/MyProfile">Profile</a></li>
+
+                                <li><a href="/home/WeGotOrders">We got Orders!</a></li>
+
+                                <li><a href="/home/FavoriteBases">Favorite Bases</a></li>
+                                <li><a href="/home/overview">Overview Page</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            @*<h1 class="text-center">
+
+                    <img src="/images/2019-12-22 (6).png" style="width:100%" />
+
+                </h1>*@
+
+
+
+            <div class="row">
+
+                @RenderBody()
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+
+    <link href="~/css/AnimatedPhoto.css" rel="stylesheet" />
+
+</body>
+
+</html>
+
+
